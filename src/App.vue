@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+  <h2>Vueye Datepicker</h2>
+  
     <vueye-datepicker v-model="date"/>
 
     <div>{{date.toLocaleDateString()}}</div>
@@ -26,9 +28,8 @@ export default {
   width: 100%;
   padding: 20px;
   display: flex;
+flex-direction: column;
 
-  justify-content: center;
-
-  // align-items: center;
+  align-items: center;
 }
 </style>

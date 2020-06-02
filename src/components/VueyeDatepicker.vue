@@ -1,7 +1,11 @@
 <template>
   <div class="ve-dp-wrapper">
     <div class="ve-dp-input">
-      <input type="text" :value="new Date(date.value).toLocaleDateString()" @focus="showPicker">
+      <input
+        type="text"
+        :value="date.value?new Date().toLocaleDateString(date.value):new Date().toLocaleDateString()"
+        @focus="showPicker"
+      >
       <icon
         name="calendar"
         fill="#666"
@@ -42,10 +46,10 @@
           />
         </div>
         <div class="ve-dp-footer">
-    <div class="ve-dp-footer__actions">
-    <span>CANCEL</span>
-    <span >OK</span>
-    </div>
+          <div class="ve-dp-footer__actions">
+            <span>CANCEL</span>
+            <span>OK</span>
+          </div>
         </div>
       </div>
     </transition>
@@ -61,8 +65,8 @@ import Icon from "./icons";
 import { ref } from "@vue/composition-api";
 export default {
   name: "vueye-datepicker",
-props:["value"],
-  setup(props,context ) {
+  props: ["value"],
+  setup(props, context) {
     const { defaultDate } = props;
     const {
       weekdaysInitial,
@@ -90,10 +94,10 @@ props:["value"],
     function selectDay(day) {
       changeView("days", ...day.value.split("-"));
       hidePicker();
-      console.log('------day--------------')
-      console.log(day)
-      console.log('--------------------')
-      context.emit('input',new Date(day.value))
+      console.log("------day--------------");
+      console.log(day);
+      console.log("--------------------");
+      context.emit("input", new Date(day.value));
     }
 
     function showPicker() {
@@ -129,5 +133,4 @@ props:["value"],
 </script>
 
 <style lang="scss" src="./style.scss">
-
 </style>
