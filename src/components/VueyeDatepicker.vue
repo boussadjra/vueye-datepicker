@@ -3,7 +3,7 @@
     <div class="ve-dp-input">
       <input
         type="text"
-        :value="date.value?new Date().toLocaleDateString(date.value):new Date().toLocaleDateString()"
+        :value="isNaN(new Date(date.value).getDate())?new Date(date.value).toLocaleDateString():new Date().toLocaleDateString()"
         @focus="showPicker"
       >
       <icon
