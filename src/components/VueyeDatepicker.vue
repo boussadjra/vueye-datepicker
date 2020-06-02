@@ -3,7 +3,7 @@
     <div class="ve-dp-input">
       <input
         type="text"
-        :value="isNaN(new Date(date.value).getDate())?new Date(date.value).toLocaleDateString():new Date().toLocaleDateString()"
+        :value="date.value"
         @focus="showPicker"
       >
       <icon
@@ -65,7 +65,7 @@ import Icon from "./icons";
 import { ref } from "@vue/composition-api";
 export default {
   name: "vueye-datepicker",
-  props: ["value"],
+  props: ["value","defaultDate"],
   setup(props, context) {
     const { defaultDate } = props;
     const {
@@ -75,7 +75,7 @@ export default {
       years,
       months,
       changeView
-    } = useDate(defaultDate ? defaultDate : new Date());
+    } = useDate( new Date());
 
     const pickerShown = ref(false);
 
