@@ -1,7 +1,7 @@
 {
     "author": "BRAHIM BOUSSADJRA",
     "name": "vueye-datepicker",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "private": false,
     "description": "A datepicker created using Vue.js",
     "main": "./build/vueye-datepicker.common.js",
