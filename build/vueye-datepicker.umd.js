@@ -239,7 +239,7 @@ exports.f = DESCRIPTORS ? nativeGetOwnPropertyDescriptor : function getOwnProper
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7bf94d37-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/ChevronRight.vue?vue&type=template&id=23b07ecc&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4e9698cf-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/ChevronRight.vue?vue&type=template&id=23b07ecc&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"height":_vm.height,"width":_vm.width,"fill":_vm.fill,"x":"0px","y":"0px","viewBox":"0 0 512 512","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"d":"M285.5 273L91.1 467.3C81.8 476.7 66.6 476.7 57.2 467.3L34.5 444.6C25.2 435.3 25.1 420.1 34.5 410.7L188.5 256 34.5 101.3C25.1 91.9 25.2 76.7 34.5 67.4L57.2 44.7C66.6 35.3 81.8 35.3 91.1 44.7L285.5 239C294.8 248.4 294.8 263.6 285.5 273z"}})])}
 var staticRenderFns = []
 
@@ -2858,7 +2858,7 @@ module.exports = function (IteratorConstructor, NAME, next) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7bf94d37-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Calendar.vue?vue&type=template&id=229ae57c&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4e9698cf-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/Calendar.vue?vue&type=template&id=229ae57c&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{staticStyle:{"transform":"rotate(-180deg)"},attrs:{"height":_vm.height,"width":_vm.width,"fill":_vm.fill,"x":"0px","y":"0px","viewBox":"0 0 500 500","xml:space":"preserve"}},[_c('path',{attrs:{"d":"M405 85v235h-298v-235h298zM405 427c23 0 43 -20 43 -43v-299c0 -23 -20 -42 -43 -42h-298c-24 0 -43 19 -43 42v299c0 23 19 43 43 43h21v42h43v-42h170v42h43v-42h21zM363 277v-42h-43v42h43zM277 277v-42h-42v42h42zM192 277v-42h-43v42h43z"}})])}
 var staticRenderFns = []
 
@@ -2951,6 +2951,32 @@ exports.BROKEN_CARET = fails(function () {
   var re = RE('^r', 'gy');
   re.lastIndex = 2;
   return re.exec('str') != null;
+});
+
+
+/***/ }),
+
+/***/ "a15b":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__("23e7");
+var IndexedObject = __webpack_require__("44ad");
+var toIndexedObject = __webpack_require__("fc6a");
+var arrayMethodIsStrict = __webpack_require__("a640");
+
+var nativeJoin = [].join;
+
+var ES3_STRINGS = IndexedObject != Object;
+var STRICT_METHOD = arrayMethodIsStrict('join', ',');
+
+// `Array.prototype.join` method
+// https://tc39.github.io/ecma262/#sec-array.prototype.join
+$({ target: 'Array', proto: true, forced: ES3_STRINGS || !STRICT_METHOD }, {
+  join: function join(separator) {
+    return nativeJoin.call(toIndexedObject(this), separator === undefined ? ',' : separator);
+  }
 });
 
 
@@ -3701,7 +3727,7 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7bf94d37-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/ChevronLeft.vue?vue&type=template&id=239f21ee&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4e9698cf-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/icons/ChevronLeft.vue?vue&type=template&id=239f21ee&
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('svg',{attrs:{"height":_vm.height,"width":_vm.width,"fill":_vm.fill,"x":"0px","y":"0px","viewBox":"0 0 512 512","xmlns":"http://www.w3.org/2000/svg"}},[_c('path',{attrs:{"d":"M34.5 239L228.9 44.7C238.2 35.3 253.4 35.3 262.8 44.7L285.5 67.4C294.8 76.7 294.9 91.9 285.5 101.3L131.5 256 285.5 410.8C294.9 420.1 294.8 435.3 285.5 444.6L262.8 467.3C253.4 476.7 238.2 476.7 228.9 467.3L34.5 273C25.1 263.6 25.1 248.4 34.5 239z"}})])}
 var staticRenderFns = []
 
@@ -3788,7 +3814,7 @@ $({ target: 'Array', proto: true, forced: lastIndexOf !== [].lastIndexOf }, {
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__("24fb");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ":root{--primary:#5118ac}*{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}pre{font-family:monospace}a,body,h1,h2,h3,h4,h5,h6,html,p,table,ul{font-family:Nunito,Helvetica,Arial,sans-serif}::-webkit-scrollbar{width:10px;border-radius:5px}::-webkit-scrollbar-track{background:inherit;border-radius:5px}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:5px}.ve-dp{max-width:100%;min-width:280px;max-height:-webkit-fit-content;max-height:-moz-fit-content;max-height:fit-content;outline:none;text-decoration:none;-webkit-transition-property:opacity,-webkit-box-shadow;transition-property:opacity,-webkit-box-shadow;transition-property:box-shadow,opacity;transition-property:box-shadow,opacity,-webkit-box-shadow;overflow-wrap:break-word;position:relative;white-space:normal;-webkit-transition:-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:box-shadow .28s cubic-bezier(.4,0,.2,1);transition:box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);will-change:box-shadow;border-radius:0;-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);display:grid;grid-template-rows:64px auto auto;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;position:absolute;top:36px}.ve-dp-wrapper{position:relative}.ve-dp-input{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-input input{max-width:100%;min-width:280px;background-color:transparent;border:1px solid #c6cad2;margin:0;padding:0 10px;color:rgba(73,69,69,.87);word-wrap:break-word;outline:none;border-radius:4px;-webkit-tap-highlight-color:transparent;height:36px;font-size:16px}.ve-dp-input input:focus{border-color:var(--primary)}.ve-dp-input__append{margin-left:-24px;cursor:pointer}.ve-dp-input__append--active{fill:var(--primary)}.ve-dp-title{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:#fff;background-color:var(--primary)}.ve-dp-body{padding:10px}.ve-dp-body--years{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#666}.ve-dp-body--years,.ve-dp-body--years__item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--years__item{padding:8px;width:64px;height:32px;text-align:center;border-radius:4px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.ve-dp-body--years__item--active{background:var(--primary);color:#fff}.ve-dp-body--years__item:hover{background:#ddd;color:#666;cursor:pointer}.ve-dp-body--years__prev--up svg{-webkit-transform:rotate(90deg);transform:rotate(90deg);margin-top:6px}.ve-dp-body--years__next--down svg{-webkit-transform:rotate(-90deg);transform:rotate(-90deg);margin-bottom:6px}.ve-dp-body--months{height:100%;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:#666}.ve-dp-body--months,.ve-dp-body--months__year{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--months__year{font-weight:700;-ms-flex-pack:distribute;justify-content:space-around;height:48px}.ve-dp-body--months__year--next:hover,.ve-dp-body--months__year--prev:hover{cursor:pointer}.ve-dp-body--months__year--next:hover svg,.ve-dp-body--months__year--prev:hover svg{fill:var(--primary)}.ve-dp-body--months__values{display:grid;grid-template-rows:repeat(4,1fr);grid-template-columns:repeat(3,1fr);width:100%;height:100%}.ve-dp-body--months__values--item{padding:8px;height:32px;text-align:center;border-radius:4px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--months__values--item--active{background:var(--primary);color:#fff}.ve-dp-body--months__values--item:hover{background:#ddd;color:#666;cursor:pointer}.ve-dp-body--days{height:100%;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:#666}.ve-dp-body--days,.ve-dp-body--days__month{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--days__month{font-weight:700;-ms-flex-pack:distribute;justify-content:space-around;height:48px}.ve-dp-body--days__month--next:hover,.ve-dp-body--days__month--prev:hover{cursor:pointer}.ve-dp-body--days__month--next:hover svg,.ve-dp-body--days__month--prev:hover svg{fill:var(--primary)}.ve-dp-body--days__values{display:grid;grid-template-rows:repeat(7,1fr);grid-template-columns:repeat(7,1fr);width:100%;height:100%}.ve-dp-body--days__values--wday{color:#444;font-weight:700}.ve-dp-body--days__values--item,.ve-dp-body--days__values--wday{font-size:10pt;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--days__values--item{padding:8px;height:32px;text-align:center;border-radius:4px}.ve-dp-body--days__values--item--active{background:var(--primary);color:#fff}.ve-dp-body--days__values--item:hover{background:#ddd;color:#666;cursor:pointer}.ve-dp-footer{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding:10px;width:100%}.ve-dp-footer,.ve-dp-footer__actions{display:-webkit-box;display:-ms-flexbox;display:flex}.ve-dp-footer__actions{-ms-flex-pack:distribute;justify-content:space-around;width:50%;color:var(--primary)}.drop-enter-active,.drop-leave-active{-webkit-transition:all .5s ease-out;transition:all .5s ease-out;max-height:400px;max-width:280px;opacity:1}.drop-enter,.drop-leave-to{max-height:0;opacity:0;max-width:0;-webkit-transform:translateY(-200px);transform:translateY(-200px);-webkit-transform:scaleY(0);transform:scaleY(0)}", ""]);
+exports.push([module.i, ":root{--primary:#5118ac}*{-webkit-box-sizing:border-box;box-sizing:border-box;margin:0}pre{font-family:monospace}a,body,h1,h2,h3,h4,h5,h6,html,p,table,ul{font-family:Lato,Helvetica,Arial,sans-serif}::-webkit-scrollbar{width:10px;border-radius:5px}::-webkit-scrollbar-track{background:inherit;border-radius:5px}::-webkit-scrollbar-thumb{background:var(--primary);border-radius:5px}.ve-dp{max-width:100%;min-width:280px;max-height:-webkit-fit-content;max-height:-moz-fit-content;max-height:fit-content;outline:none;text-decoration:none;-webkit-transition-property:opacity,-webkit-box-shadow;transition-property:opacity,-webkit-box-shadow;transition-property:box-shadow,opacity;transition-property:box-shadow,opacity,-webkit-box-shadow;overflow-wrap:break-word;position:relative;white-space:normal;-webkit-transition:-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);transition:box-shadow .28s cubic-bezier(.4,0,.2,1);transition:box-shadow .28s cubic-bezier(.4,0,.2,1),-webkit-box-shadow .28s cubic-bezier(.4,0,.2,1);will-change:box-shadow;border-radius:0;-webkit-box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);box-shadow:0 3px 1px -2px rgba(0,0,0,.2),0 2px 2px 0 rgba(0,0,0,.14),0 1px 5px 0 rgba(0,0,0,.12);background:#ecedf0;display:grid;grid-template-rows:64px auto auto;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;position:absolute;top:36px;z-index:4}.ve-dp-wrapper{position:relative}.ve-dp-input{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-input input{max-width:100%;min-width:280px;background-color:transparent;border:1px solid #c6cad2;margin:0;padding:0 10px;color:rgba(73,69,69,.87);word-wrap:break-word;outline:none;border-radius:4px;-webkit-tap-highlight-color:transparent;height:36px;font-size:16px}.ve-dp-input input:focus{border-color:var(--primary)}.ve-dp-input__append{margin-left:-24px;cursor:pointer}.ve-dp-input__append--active{fill:var(--primary)}.ve-dp-close{position:absolute;right:6px;top:4px;-webkit-transform:rotate(-90deg);transform:rotate(-90deg);cursor:pointer}.ve-dp-title{height:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:#fff;background-color:var(--primary)}.ve-dp-body{padding:10px}.ve-dp-body--years{-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;color:#666}.ve-dp-body--years,.ve-dp-body--years__item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--years__item{padding:8px;width:64px;height:32px;text-align:center;border-radius:4px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}.ve-dp-body--years__item--active{background:var(--primary);color:#fff}.ve-dp-body--years__item:hover{background:#ddd;color:#666;cursor:pointer}.ve-dp-body--years__prev--up svg{-webkit-transform:rotate(90deg);transform:rotate(90deg);margin-top:6px}.ve-dp-body--years__next--down svg{-webkit-transform:rotate(-90deg);transform:rotate(-90deg);margin-bottom:6px}.ve-dp-body--months{height:100%;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:#666}.ve-dp-body--months,.ve-dp-body--months__year{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--months__year{font-weight:700;-ms-flex-pack:distribute;justify-content:space-around;height:48px}.ve-dp-body--months__year--next:hover,.ve-dp-body--months__year--prev:hover{cursor:pointer}.ve-dp-body--months__year--next:hover svg,.ve-dp-body--months__year--prev:hover svg{fill:var(--primary)}.ve-dp-body--months__values{display:grid;grid-template-rows:repeat(4,1fr);grid-template-columns:repeat(3,1fr);width:100%;height:100%}.ve-dp-body--months__values--item{padding:8px;height:32px;text-align:center;border-radius:4px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--months__values--item--active{background:var(--primary);color:#fff}.ve-dp-body--months__values--item:hover{background:#ddd;color:#666;cursor:pointer}.ve-dp-body--days{height:100%;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;color:#666}.ve-dp-body--days,.ve-dp-body--days__month{width:100%;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--days__month{font-weight:700;-ms-flex-pack:distribute;justify-content:space-around;height:48px}.ve-dp-body--days__month--next:hover,.ve-dp-body--days__month--prev:hover{cursor:pointer}.ve-dp-body--days__month--next:hover svg,.ve-dp-body--days__month--prev:hover svg{fill:var(--primary)}.ve-dp-body--days__values{display:grid;grid-template-rows:repeat(7,1fr);grid-template-columns:repeat(7,1fr);width:100%;height:100%}.ve-dp-body--days__values--wday{color:#444;font-weight:700}.ve-dp-body--days__values--item,.ve-dp-body--days__values--wday{font-size:10pt;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.ve-dp-body--days__values--item{padding:8px;height:32px;text-align:center;border-radius:4px}.ve-dp-body--days__values--item--active{background:var(--primary);color:#fff}.ve-dp-body--days__values--item:hover{background:#ddd;color:#666;cursor:pointer}.ve-dp-footer{-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;padding:10px;width:100%}.ve-dp-footer,.ve-dp-footer__actions{display:-webkit-box;display:-ms-flexbox;display:flex}.ve-dp-footer__actions{-ms-flex-pack:distribute;justify-content:space-around;width:50%;color:var(--primary)}.drop-enter-active,.drop-leave-active{-webkit-transition:all .5s ease-out;transition:all .5s ease-out;max-height:400px;max-width:280px;opacity:1}.drop-enter,.drop-leave-to{max-height:0;opacity:0;max-width:0;-webkit-transform:translateY(-200px);transform:translateY(-200px);-webkit-transform:scaleY(0);transform:scaleY(0)}", ""]);
 // Exports
 module.exports = exports;
 
@@ -4724,18 +4750,24 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7bf94d37-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueyeDatepicker.vue?vue&type=template&id=b81c3e78&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ve-dp-wrapper"},[_c('div',{staticClass:"ve-dp-input"},[_c('input',{attrs:{"type":"text"},domProps:{"value":_vm.date.value},on:{"focus":_vm.showPicker}}),_c('icon',{staticClass:"ve-dp-input__append",class:{'ve-dp-input__append--active':_vm.pickerShown},attrs:{"name":"calendar","fill":"#666","height":"24px","width":"24px"}})],1),_c('transition',{attrs:{"name":"drop"}},[(_vm.pickerShown)?_c('div',{staticClass:"ve-dp"},[_c('div',{staticClass:"ve-dp-title"},[_c('h2',[_vm._v(_vm._s(_vm.date.label))])]),_c('div',{staticClass:"ve-dp-body"},[(_vm.date.type==='years')?_c('Years',{attrs:{"year":_vm.date.value,"years":_vm.years},on:{"select-year":_vm.selectYear,"next-year":_vm.nextYear,"prev-year":_vm.prevYear}}):(_vm.date.type==='months')?_c('Months',{attrs:{"months":_vm.months,"year":_vm.date.value},on:{"select-year":_vm.selectYear,"select-month":_vm.selectMonth}}):(_vm.date.type==='days')?_c('Days',{attrs:{"month":_vm.date,"weekdaysInitial":_vm.weekdaysInitial},on:{"prev-month":_vm.selectMonth,"next-month":_vm.selectMonth,"select-day":_vm.selectDay}}):_vm._e()],1),_c('div',{staticClass:"ve-dp-footer"},[_c('div',{staticClass:"ve-dp-footer__actions"},[_c('span',[_vm._v("CANCEL")]),_c('span',[_vm._v("OK")])])])]):_vm._e()])],1)}
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4e9698cf-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueyeDatepicker.vue?vue&type=template&id=5b9c52d7&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ve-dp-wrapper"},[_c('div',{staticClass:"ve-dp-input"},[_c('input',{attrs:{"type":"text"},domProps:{"value":_vm.inputValue},on:{"focus":_vm.showPicker}}),_c('icon',{staticClass:"ve-dp-input__append",class:{'ve-dp-input__append--active':_vm.pickerShown},attrs:{"name":"calendar","fill":"#666","height":"24px","width":"24px"}})],1),_c('transition',{attrs:{"name":"drop"}},[(_vm.pickerShown)?_c('div',{staticClass:"ve-dp"},[_c('div',{staticClass:"ve-dp-title"},[_c('icon',{staticClass:"ve-dp-close",attrs:{"name":"chevron-right","fill":"#eee","height":"16px","width":"16px"},nativeOn:{"click":function($event){return _vm.hidePicker($event)}}}),_c('h2',[_vm._v(_vm._s(_vm.date.label))])],1),_c('div',{staticClass:"ve-dp-body"},[(_vm.date.type==='years')?_c('Years',{attrs:{"year":_vm.date.value,"years":_vm.years},on:{"select-year":_vm.selectYear,"next-year":_vm.selectYear,"prev-year":_vm.selectYear}}):(_vm.date.type==='months')?_c('Months',{attrs:{"months":_vm.months,"year":_vm.date.value},on:{"select-year":_vm.selectYear,"select-month":_vm.selectMonth}}):(_vm.date.type==='days')?_c('Days',{attrs:{"month":_vm.date,"weekdaysInitial":_vm.weekdaysInitial},on:{"prev-month":_vm.selectMonth,"next-month":_vm.selectMonth,"select-day":_vm.selectDay}}):_vm._e()],1)]):_vm._e()])],1)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./src/components/VueyeDatepicker.vue?vue&type=template&id=b81c3e78&
+// CONCATENATED MODULE: ./src/components/VueyeDatepicker.vue?vue&type=template&id=5b9c52d7&
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.concat.js
 var es_array_concat = __webpack_require__("99af");
 
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.to-string.js
+var es_object_to_string = __webpack_require__("d3b7");
+
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.regexp.exec.js
 var es_regexp_exec = __webpack_require__("ac1f");
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.regexp.to-string.js
+var es_regexp_to_string = __webpack_require__("25f0");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.split.js
 var es_string_split = __webpack_require__("1276");
@@ -4764,12 +4796,6 @@ var es_array_from = __webpack_require__("a630");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.iterator.js
 var es_array_iterator = __webpack_require__("e260");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.to-string.js
-var es_object_to_string = __webpack_require__("d3b7");
-
-// EXTERNAL MODULE: ./node_modules/core-js/modules/es.regexp.to-string.js
-var es_regexp_to_string = __webpack_require__("25f0");
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.string.iterator.js
 var es_string_iterator = __webpack_require__("3ca3");
@@ -4840,7 +4866,7 @@ var useDate_useDate = function useDate(_date, type) {
 
   var date = Object(composition_api_["ref"])({
     type: type ? type : 'years',
-    value: _date.getFullYear(),
+    value: _date,
     label: _date.getFullYear()
   });
   /*********** */
@@ -4897,7 +4923,7 @@ var useDate_useDate = function useDate(_date, type) {
       var _years = [];
 
       for (var i = 0; i < 5; i++) {
-        _years.push(date.value.value - 2 + i);
+        _years.push(date.value.label - 2 + i);
       }
 
       return _years;
@@ -4918,7 +4944,7 @@ var useDate_useDate = function useDate(_date, type) {
 };
 
 /* harmony default export */ var _use_useDate = (useDate_useDate);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7bf94d37-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Years.vue?vue&type=template&id=b67698a6&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4e9698cf-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Years.vue?vue&type=template&id=b67698a6&
 var Yearsvue_type_template_id_b67698a6_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ve-dp-body--years"},[_c('div',{staticClass:"ve-dp-body--years__item ve-dp-body--years__prev--up",on:{"click":_vm.prev}},[_c('icon',{attrs:{"name":"chevron-left","fill":"#666"}})],1),_vm._l((_vm.years),function(_year,index){return _c('div',{key:index,staticClass:"ve-dp-body--years__item",class:{'ve-dp-body--years__item--active':_vm.year===_year},on:{"click":function($event){return _vm.selectYear(_year)}}},[_vm._v(_vm._s(_year))])}),_c('div',{staticClass:"ve-dp-body--years__item ve-dp-body--years__next--down",on:{"click":_vm.next}},[_c('icon',{attrs:{"name":"chevron-left","fill":"#666"}})],1)],2)}
 var Yearsvue_type_template_id_b67698a6_staticRenderFns = []
 
@@ -5126,7 +5152,7 @@ var Years_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var Years = (Years_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7bf94d37-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Months.vue?vue&type=template&id=7e4efb58&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4e9698cf-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Months.vue?vue&type=template&id=7e4efb58&
 var Monthsvue_type_template_id_7e4efb58_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ve-dp-body--months"},[_c('div',{staticClass:"ve-dp-body--months__year"},[_c('div',{staticClass:"ve-dp-body--months__year--prev",on:{"click":_vm.prev}},[_c('icon',{attrs:{"name":"chevron-left","fill":"#666"}})],1),_c('div',[_vm._v(" "+_vm._s(_vm.year)+" ")]),_c('div',{staticClass:"ve-dp-body--months__year--next",on:{"click":_vm.next}},[_c('icon',{attrs:{"name":"chevron-right","fill":"#666"}})],1)]),_c('div',{staticClass:"ve-dp-body--months__values"},_vm._l((_vm.monthsShort),function(month,index){return _c('div',{key:index,staticClass:"ve-dp-body--months__values--item",class:{'ve-dp-body--months__values--item--active':index===new Date().getMonth()},on:{"click":function($event){return _vm.selectMonth(index)}}},[_vm._v(_vm._s(month))])}),0)])}
 var Monthsvue_type_template_id_7e4efb58_staticRenderFns = []
 
@@ -5212,7 +5238,7 @@ var Months_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var Months = (Months_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"7bf94d37-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Days.vue?vue&type=template&id=85d8166a&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"4e9698cf-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/Days.vue?vue&type=template&id=85d8166a&
 var Daysvue_type_template_id_85d8166a_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"ve-dp-body--days"},[_c('div',{staticClass:"ve-dp-body--days__month"},[_c('div',{staticClass:"ve-dp-body--months__year--prev",on:{"click":_vm.prev}},[_c('icon',{attrs:{"name":"chevron-left","fill":"#666"}})],1),_c('div',[_vm._v(_vm._s(_vm.month.label))]),_c('div',{staticClass:"ve-dp-body--months__year--next",on:{"click":_vm.next}},[_c('icon',{attrs:{"name":"chevron-right","fill":"#666"}})],1)]),_c('div',{staticClass:"ve-dp-body--days__values"},[_vm._l((_vm.weekdaysInitial),function(weekday,index){return _c('div',{key:'wd'+index,staticClass:"ve-dp-body--days__values--wday"},[_vm._v(_vm._s(weekday))])}),_vm._l((_vm.days),function(day,index){return _c('div',{key:index,staticClass:"ve-dp-body--days__values--item",style:({'grid-column-start':day.dayOfWeek+1}),on:{"click":function($event){return _vm.$emit('select-day', day)}}},[_vm._v(_vm._s(day.index))])})],2)])}
 var Daysvue_type_template_id_85d8166a_staticRenderFns = []
 
@@ -5381,11 +5407,59 @@ var Days_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var Days = (Days_component.exports);
+// EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.join.js
+var es_array_join = __webpack_require__("a15b");
+
+// CONCATENATED MODULE: ./src/components/Helpers/index.js
+
+
+
+
+
+
+function formatDate(date, format, customFormatter) {
+  var _format = format ? format : 'yyyy-mm-dd';
+
+  var _dateString = "".concat(date.getFullYear(), "-").concat(pad(date.getMonth() + 1), "-").concat(pad(date.getDate()));
+
+  var supportedFormats = {
+    'yyyy/mm/dd': function yyyyMmDd() {
+      return _dateString.replace(/-/g, '/');
+    },
+    'dd/mm/yyyy': function ddMmYyyy() {
+      return _dateString.split('-').reverse().join('/');
+    },
+    'mm/dd/yyyy': function mmDdYyyy() {
+      return date.toLocaleDateString('en');
+    },
+    'yyyy-mm-dd': function yyyyMmDd() {
+      return _dateString;
+    },
+    'dd-mm-yyyy': function ddMmYyyy() {
+      return _dateString.split('-').reverse().join('-');
+    },
+    'mm-dd-yyyy': function mmDdYyyy() {
+      return date.toLocaleDateString('en').replace(/\//g, '-');
+    }
+  };
+
+  if (customFormatter) {
+    return customFormatter(date);
+  }
+
+  return supportedFormats[_format]();
+}
+
+function pad(val) {
+  return Number(val) < 10 ? '0' + val : val;
+}
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/VueyeDatepicker.vue?vue&type=script&lang=js&
 
 
 
 
+
+
 //
 //
 //
@@ -5444,6 +5518,11 @@ var Days_component = Object(componentNormalizer["a" /* default */])(
 //
 //
 //
+//
+//
+//
+//
+
 
 
 
@@ -5452,11 +5531,14 @@ var Days_component = Object(componentNormalizer["a" /* default */])(
 
 /* harmony default export */ var VueyeDatepickervue_type_script_lang_js_ = ({
   name: "vueye-datepicker",
-  props: ["value", "defaultDate"],
+  props: ["value", "color", "format", "customFormatter"],
   setup: function setup(props, context) {
-    var defaultDate = props.defaultDate;
+    var value = props.value,
+        color = props.color,
+        format = props.format,
+        customFormatter = props.customFormatter;
 
-    var _useDate = _use_useDate(new Date()),
+    var _useDate = _use_useDate(value.value ? new Date(value.value) : new Date()),
         weekdaysInitial = _useDate.weekdaysInitial,
         setWeekdays = _useDate.setWeekdays,
         date = _useDate.date,
@@ -5465,30 +5547,42 @@ var Days_component = Object(componentNormalizer["a" /* default */])(
         changeView = _useDate.changeView;
 
     var pickerShown = Object(composition_api_["ref"])(false);
+    var inputValue = Object(composition_api_["computed"])(function () {
+      if (date.value.type === "years" || date.value.type === "months") {
+        return formatDate(new Date(typeof date.value.value === "number" ? new String(date.value.value) : date.value.value.toString()), format, customFormatter);
+      }
+
+      return formatDate(new Date(date.value.value), format, customFormatter);
+    });
+    Object(composition_api_["watch"])("props.color", function () {
+      color ? document.documentElement.style.setProperty("--primary", color) : document.documentElement.style.setProperty("--primary", "#5118ac");
+    });
+    Object(composition_api_["watch"])(date, function (newVal, oldVal) {
+      emitVal();
+    });
+    /*** functions */
 
     function selectYear(_year) {
       changeView("months", _year);
-    }
-
-    function nextYear(_year) {
-      changeView("years", _year);
-    }
-
-    function prevYear(_year) {
-      changeView("years", _year);
+      emitVal();
     }
 
     function selectMonth(_year, index) {
       changeView("days", _year, index + 1);
+      emitVal();
     }
 
     function selectDay(day) {
       changeView.apply(void 0, ["days"].concat(_toConsumableArray(day.value.split("-"))));
       hidePicker();
-      console.log("------day--------------");
-      console.log(day);
-      console.log("--------------------");
-      context.emit("input", new Date(day.value));
+      emitVal();
+    }
+
+    function emitVal() {
+      context.emit("input", {
+        formattedValue: inputValue.value,
+        value: new Date(typeof date.value.value === "number" ? new String(date.value.value) : date.value.value.toString())
+      });
     }
 
     function showPicker() {
@@ -5504,14 +5598,13 @@ var Days_component = Object(componentNormalizer["a" /* default */])(
       date: date,
       years: years,
       selectYear: selectYear,
-      prevYear: prevYear,
-      nextYear: nextYear,
       months: months,
       selectMonth: selectMonth,
       selectDay: selectDay,
       pickerShown: pickerShown,
       showPicker: showPicker,
-      hidePicker: hidePicker
+      hidePicker: hidePicker,
+      inputValue: inputValue
     };
   },
   components: {

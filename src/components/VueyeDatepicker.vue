@@ -1,11 +1,7 @@
 <template>
   <div class="ve-dp-wrapper">
     <div class="ve-dp-input">
-      <input
-        type="text"
-        :value="date.value"
-        @focus="showPicker"
-      >
+      <input type="text" :value="inputValue" @focus="showPicker">
       <icon
         name="calendar"
         fill="#666"
@@ -18,6 +14,14 @@
     <transition name="drop">
       <div class="ve-dp" v-if="pickerShown">
         <div class="ve-dp-title">
+          <icon
+            @click.native="hidePicker"
+            name="chevron-right"
+            fill="#eee"
+            height="16px"
+            width="16px"
+            class="ve-dp-close"
+          />
           <h2>{{date.label}}</h2>
         </div>
         <div class="ve-dp-body">
@@ -26,8 +30,8 @@
             :year="date.value"
             :years="years"
             @select-year="selectYear"
-            @next-year="nextYear"
-            @prev-year="prevYear"
+            @next-year="selectYear"
+            @prev-year="selectYear"
           />
           <Months
             v-else-if="date.type==='months'"
@@ -45,12 +49,12 @@
             @select-day="selectDay"
           />
         </div>
-        <div class="ve-dp-footer">
+        <!--<div class="ve-dp-footer">
           <div class="ve-dp-footer__actions">
             <span>CANCEL</span>
             <span>OK</span>
           </div>
-        </div>
+        </div>-->
       </div>
     </transition>
   </div>
@@ -62,12 +66,13 @@ import Years from "./Years";
 import Months from "./Months";
 import Days from "./Days";
 import Icon from "./icons";
-import { ref } from "@vue/composition-api";
+import { ref, computed, watch } from "@vue/composition-api";
+import { formatDate } from "./Helpers";
 export default {
   name: "vueye-datepicker",
-  props: ["value","defaultDate"],
+  props: ["value", "color","format","customFormatter"],
   setup(props, context) {
-    const { defaultDate } = props;
+    const { value, color,format,customFormatter } = props;
     const {
       weekdaysInitial,
       setWeekdays,
@@ -75,31 +80,57 @@ export default {
       years,
       months,
       changeView
-    } = useDate( new Date());
+    } = useDate(value.value ? new Date(value.value) : new Date());
 
     const pickerShown = ref(false);
 
+    const inputValue = computed(() => {
+      if (date.value.type === "years" || date.value.type === "months") {
+        return formatDate(
+          new Date(
+            typeof date.value.value === "number"
+              ? new String(date.value.value)
+              : date.value.value.toString()
+          ),
+          format,
+          customFormatter
+        );
+      }
+      return formatDate(new Date(date.value.value), format,customFormatter);
+    });
+
+    watch("props.color", () => {
+      color
+        ? document.documentElement.style.setProperty("--primary", color)
+        : document.documentElement.style.setProperty("--primary", "#5118ac");
+    });
+    watch(date, (newVal, oldVal) => {
+      emitVal();
+    });
+    /*** functions */
     function selectYear(_year) {
       changeView("months", _year);
+
+      emitVal();
     }
-    function nextYear(_year) {
-      changeView("years", _year);
-    }
-    function prevYear(_year) {
-      changeView("years", _year);
-    }
+
     function selectMonth(_year, index) {
       changeView("days", _year, index + 1);
+      emitVal();
     }
     function selectDay(day) {
       changeView("days", ...day.value.split("-"));
       hidePicker();
-      console.log("------day--------------");
-      console.log(day);
-      console.log("--------------------");
-      context.emit("input", new Date(day.value));
+      emitVal();
     }
-
+    function emitVal() {
+      context.emit("input", {
+        formattedValue: inputValue.value,
+        value: new Date(  typeof date.value.value === "number"
+              ? new String(date.value.value)
+              : date.value.value.toString())
+      });
+    }
     function showPicker() {
       pickerShown.value = true;
     }
@@ -113,14 +144,14 @@ export default {
       years,
 
       selectYear,
-      prevYear,
-      nextYear,
+
       months,
       selectMonth,
       selectDay,
       pickerShown,
       showPicker,
-      hidePicker
+      hidePicker,
+      inputValue
     };
   },
   components: {

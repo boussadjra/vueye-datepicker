@@ -28,13 +28,14 @@ const useDate = (_date, type) => {
 	/**date */
 	const date = ref({
 		type: type ? type : 'years',
-		value: _date.getFullYear(),
+		value:_date,
 		label: _date.getFullYear(),
 	});
 
 	/*********** */
 
 	function changeView(_type, _year,_month,_day=1) {
+		
 		switch (_type) {
 			case 'years':
 				date.value = {
@@ -78,7 +79,7 @@ const useDate = (_date, type) => {
 		years: computed(() => {
 			let _years = [];
 			for (let i = 0; i < 5; i++) {
-				_years.push(date.value.value - 2 + i);
+				_years.push(date.value.label - 2 + i);
 			}
 			return _years;
 		}),
