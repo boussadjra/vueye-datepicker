@@ -3,6 +3,15 @@
     <div class="ve-dp-input">
       <input type="text" :value="inputValue" @focus="showPicker">
       <icon
+        name="close"
+        fill="#888"
+        height="20px"
+        width="20px"
+        class="ve-dp-input__close"
+        :class="{'ve-dp-input__close--active':pickerShown}"
+        @click.native="clear"
+      />
+      <icon
         name="calendar"
         fill="#666"
         height="24px"
@@ -70,9 +79,9 @@ import { ref, computed, watch } from "@vue/composition-api";
 import { formatDate } from "./Helpers";
 export default {
   name: "vueye-datepicker",
-  props: ["value", "color","format","customFormatter"],
+  props: ["value", "color", "format", "customFormatter"],
   setup(props, context) {
-    const { value, color,format,customFormatter } = props;
+    const { value, color, format, customFormatter } = props;
     const {
       weekdaysInitial,
       setWeekdays,
@@ -84,19 +93,25 @@ export default {
 
     const pickerShown = ref(false);
 
-    const inputValue = computed(() => {
-      if (date.value.type === "years" || date.value.type === "months") {
-        return formatDate(
-          new Date(
-            typeof date.value.value === "number"
-              ? new String(date.value.value)
-              : date.value.value.toString()
-          ),
-          format,
-          customFormatter
-        );
+    const inputValue = computed({
+      get() {
+        if (date.value.type === "years" || date.value.type === "months") {
+          return formatDate(
+            new Date(
+              typeof date.value.value === "number"
+                ? new String(date.value.value)
+                : date.value.value.toString()
+            ),
+            format,
+            customFormatter
+          );
+        }
+        return formatDate(new Date(date.value.value), format, customFormatter);
+      },
+
+      set(val) {
+        date = val;
       }
-      return formatDate(new Date(date.value.value), format,customFormatter);
     });
 
     watch("props.color", () => {
@@ -126,9 +141,11 @@ export default {
     function emitVal() {
       context.emit("input", {
         formattedValue: inputValue.value,
-        value: new Date(  typeof date.value.value === "number"
-              ? new String(date.value.value)
-              : date.value.value.toString())
+        value: new Date(
+          typeof date.value.value === "number"
+            ? new String(date.value.value)
+            : date.value.value.toString()
+        )
       });
     }
     function showPicker() {
@@ -137,6 +154,10 @@ export default {
 
     function hidePicker() {
       pickerShown.value = false;
+    }
+
+    function clear() {
+  changeView('years',new Date().getFullYear())
     }
     return {
       weekdaysInitial,
@@ -151,7 +172,8 @@ export default {
       pickerShown,
       showPicker,
       hidePicker,
-      inputValue
+      inputValue,
+      clear
     };
   },
   components: {

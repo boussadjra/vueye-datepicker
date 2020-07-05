@@ -122,10 +122,19 @@ table {
             }
         }
         &__append {
-            margin-left: -24px;
+            // margin-left: -24px;
             cursor: pointer;
             &--active {
                 fill: var(--primary)
+            }
+        }
+        &__close {
+            margin-left: -48px;
+            cursor: pointer;
+            visibility: hidden;
+            &--active {
+                fill: var(--primary);
+                visibility: visible;
             }
         }
     }

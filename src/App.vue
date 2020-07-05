@@ -20,8 +20,11 @@ export default {
     date: {
       value: new Date(),
       formattedValue: ""
-    }
+    },
+ 
   }),
+
+
   methods: {
     customFormatter(date) {
       let months = [
@@ -65,7 +68,7 @@ export default {
           day = day + "th";
           break;
       }
-     let _dateString = `${weekdays[_weekday]} ${
+      let _dateString = `${weekdays[_weekday]} ${
         months[_month]
       }, ${day} ${date.getFullYear()}`;
       return _dateString;
@@ -80,10 +83,10 @@ export default {
 <style lang="scss">
 #app {
   height: 100vh;
-  width: 100%;
+  width: max-content;
   padding: 20px;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+grid-gap: 10px;
   // justify-content: center;
   align-items: center;
 }
@@ -91,6 +94,6 @@ pre {
   margin-top: 20px;
   padding: 10px;
   color: #fff;
-  background: #310244;
+  background: #7e06ad;
 }
 </style>

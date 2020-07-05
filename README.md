@@ -64,6 +64,8 @@ new Vue({
 -   `value` : the Date object instance.
 -   `formattedValue` : the date value returned as formatted string
 
+> **Note :**
+The clear icon **×** doesn't clear the input value but It initialize the date value to the current year (January 1st, currentYear) 
 ### Available formats :
 
 The `format` prop could accept one of the following formats as a value :
