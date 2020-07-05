@@ -39,14 +39,14 @@
             :year="date.value"
             :years="years"
             @select-year="selectYear"
-            @next-year="selectYear"
-            @prev-year="selectYear"
+            @next-year="nextYear"
+            @prev-year="prevYear"
           />
           <Months
             v-else-if="date.type==='months'"
             :months="months"
             :year="date.value"
-            @select-year="selectYear"
+            @select-year="prevYear"
             @select-month="selectMonth"
           />
           <Days
@@ -128,7 +128,16 @@ export default {
 
       emitVal();
     }
+    function prevYear(_year) {
+      changeView("years", _year);
 
+      // emitVal();
+    }
+    function nextYear(_year) {
+      changeView("years", _year);
+
+      // emitVal();
+    }
     function selectMonth(_year, index) {
       changeView("days", _year, index + 1);
       emitVal();
@@ -157,7 +166,7 @@ export default {
     }
 
     function clear() {
-  changeView('years',new Date().getFullYear())
+      changeView("years", new Date().getFullYear());
     }
     return {
       weekdaysInitial,
@@ -165,6 +174,8 @@ export default {
       years,
 
       selectYear,
+      nextYear,
+      prevYear,
 
       months,
       selectMonth,

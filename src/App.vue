@@ -83,10 +83,10 @@ export default {
 <style lang="scss">
 #app {
   height: 100vh;
-  width: max-content;
+  width: 100%;
   padding: 20px;
-  display: grid;
-grid-gap: 10px;
+  display: flex;
+  flex-direction: column;
   // justify-content: center;
   align-items: center;
 }

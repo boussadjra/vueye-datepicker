@@ -32,21 +32,31 @@ export default {
         return _years;
       }
     },
-    year: String | Number,
+    year: String | Number | Date
   },
   methods: {
-      selectYear(_year){
-          this.$emit('select-year',_year)
-      },
-      next(){
-          let _year=this.year+1
-          this.$emit('next-year',_year)
-
-      },prev(){
-          let _year=this.year-1
-          this.$emit('prev-year',_year)
-
+    selectYear(_year) {
+      this.$emit("select-year", _year);
+    },
+    next() {
+      let _year;
+      if (typeof this.year === "number") {
+        _year = this.year + 1;
+      } else {
+        _year = this.year.getFullYear() + 1;
       }
+      this.$emit("next-year", _year);
+    },
+    prev() {
+      let _year;
+      if (typeof this.year === "number") {
+        _year = this.year - 1;
+      } else {
+        _year = this.year.getFullYear() - 1;
+      }
+
+      this.$emit("prev-year", _year);
+    }
   },
   components: {
     Icon

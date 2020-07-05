@@ -81,6 +81,9 @@ const useDate = (_date, type) => {
 			for (let i = 0; i < 5; i++) {
 				_years.push(date.value.label - 2 + i);
 			}
+			console.log('--------computed years------------')
+			console.log(_years)
+			console.log('--------------------')
 			return _years;
 		}),
 		weekdays: computed(() => weekdays.value),
